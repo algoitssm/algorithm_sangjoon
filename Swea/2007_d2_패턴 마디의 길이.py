@@ -1,6 +1,3 @@
-from unittest import result
-
-
 test = int(input())
 
 
