@@ -1,6 +1,3 @@
-from collections import deque
-
-
 def get_max(nums: str):
     res = ""
     cnt = 0

@@ -1,23 +1,18 @@
-from collections import deque
+import sys
 
+n = int(sys.stdin.readline())
+lst = list(map(int, sys.stdin.readline().split()))
 
-def count_a_to_b(a, b):
-    dq = deque([(a, 1)])
+# 중간에 벌꿀통이 있을 경우
+lst_mid = lst[1:-1]
+max_sum = sum(lst_mid) + max(lst_mid)
 
-    while dq:
-        e, cnt = dq.popleft()
-        if e == b:
-            return cnt
+# 한쪽 끝에 벌통이 있을 경우
+for i in range(1, n):
+    temp_sum_left = sum(lst[1:i] + lst[i + 1 :] * 2)
+    temp_sum_right = sum(lst[:i] * 2 + lst[i + 1 :])
+    print(lst[:i], lst[i + 1 :])
+    print(temp_sum_left, temp_sum_right)
+    max_sum = max(max_sum, temp_sum_left, temp_sum_right)
 
-        if e > b:
-            continue
-
-        dq.append((e * 2, cnt + 1))
-        dq.append((e * 10 + 1, cnt + 1))
-        print(dq)
-    return -1
-
-
-a, b = map(int, input().split())
-ans = count_a_to_b(a, b)
-print(ans)
+print(max_sum)

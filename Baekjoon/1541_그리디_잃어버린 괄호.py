@@ -33,3 +33,16 @@ else:
 
 ans = sum(add) - sum(sub)
 print(ans)
+
+
+# math_exp = list(input())
+
+# idx = math_exp.index("-")
+
+# if idx != -1:
+#     for i in range(len(math_exp[idx:])):
+#         if math_exp[idx + i] == "+":
+#             math_exp[idx + i] = "-"
+
+# exp = "".join(math_exp)
+# print(eval(exp))

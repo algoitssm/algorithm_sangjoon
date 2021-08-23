@@ -33,7 +33,7 @@ for i in range(n):
             clean.append([i, j])
 
 walls = list(combinations(clean, 3))
-
+print(walls)
 for wall in walls:
     new_laboratory = deepcopy(laboratory)  # 벽 생성 지도 복사
     for x, y in wall:
