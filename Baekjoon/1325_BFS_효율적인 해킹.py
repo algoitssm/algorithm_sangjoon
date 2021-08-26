@@ -2,7 +2,7 @@ from collections import deque
 
 
 def bfs(n: int):
-    visited = [0] * 10001
+    visited = [0] * (n + 1)
     cnt = 0
 
     dq = deque([n])

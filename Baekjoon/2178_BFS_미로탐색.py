@@ -11,14 +11,13 @@ def bfs(x: int, y: int):
     while dq:
         x, y, cnt = dq.popleft()
 
-        if x == n - 1 and y == m - 1:
-            return cnt
-
         for i in range(4):
             nx, ny = x + dx[i], y + dy[i]
             if 0 <= nx < n and 0 <= ny < m:
                 if mp[nx][ny] == "1":
                     mp[nx][ny] = 0
+                    if nx == n - 1 and ny == m - 1:
+                        return cnt + 1
                     dq.append([nx, ny, cnt + 1])
 
 
