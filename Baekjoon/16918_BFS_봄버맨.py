@@ -30,4 +30,4 @@ for t in range(1, n + 1):
     bomber_man(t)
 
 for line in lst:
-    print(*line)
+    print("".join(line))
