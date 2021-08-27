@@ -1,6 +1,6 @@
 def bomber_man(t: int):
-    dx = [0, 1, 0, -1]
-    dy = [1, 0, -1, 0]
+    dx = [0, 0, 1, 0, -1]
+    dy = [0, 1, 0, -1, 0]
 
     if not t % 2:
         for i in range(r):
@@ -12,7 +12,7 @@ def bomber_man(t: int):
 
     else:
         for x, y in check:
-            for i in range(4):
+            for i in range(5):
                 nx = x + dx[i]
                 ny = y + dy[i]
                 if 0 <= nx < r and 0 <= ny < c:  # 폭탄 폭발 처리
@@ -25,9 +25,9 @@ r, c, n = map(int, input().split())
 lst = [list(input()) for _ in range(r)]
 check = []
 
-
 for t in range(1, n + 1):
     bomber_man(t)
-
-for line in lst:
-    print("".join(line))
+    print(t)
+    for line in lst:
+        print("".join(line))
+    print()
