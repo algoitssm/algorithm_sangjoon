@@ -27,7 +27,6 @@ check = []
 
 for t in range(1, n + 1):
     bomber_man(t)
-    print(t)
-    for line in lst:
-        print("".join(line))
-    print()
+
+for line in lst:
+    print("".join(line))
