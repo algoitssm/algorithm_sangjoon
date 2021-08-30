@@ -1,31 +1,41 @@
 n, m = map(int, input().split())
 
 store = int(input())
-gp = {i: [] for i in range(1, 5)}
+lst = [tuple(map(int, input().split())) for _ in range(store)]
 
-for _ in range(store):
-    d, p = map(int, input().split())
-    if d == 1:
-        gp[1].append((p))
-    if d == 2:
-        gp[2].append((p))
-    if d == 3:
-        gp[3].append((0))
-    if d == 4:
-        gp[4].append((n))
-
-x, y = map(int, input().split())
+cur, cur_l = map(int, input().split())
 ans = 0
+side = [(1, 2), (2, 1), (3, 4), (4, 3)]
 
-for d, lst in gp:
-    if x == d:
-        for temp in lst:
-            ans += abs(y - temp)
-    if x == 1:
-        pass
-    if x == 2:
-        pass
-    if x == 3:
-        pass
-    if x == 4:
-        pass
+for d, l in lst:
+    if cur == d:  # 같은 방향일 경우
+        ans += abs(cur_l - l)
+
+    if (cur_l, l) in side:  # 반대편에 위치한 경우
+        if d == 1 or d == 3:
+            ans += m + min(cur_l + l, 2 * n - cur_l - l)
+        else:
+            ans += n + min(cur_l + l, 2 * m - cur_l - l)
+
+    # 북
+    if cur == 1 and d == 3:
+        ans += cur_l + l
+    if cur == 1 and d == 4:
+        ans += (n - cur_l) + l
+    # 남
+    if cur == 2 and d == 3:
+        ans += cur_l + (m - l)
+    if cur == 2 and d == 4:
+        ans += (n - cur_l) + (m - l)
+    # 서
+    if cur == 3 and d == 1:
+        ans += cur_l + l
+    if cur == 3 and d == 2:
+        ans += (m - cur_l) + l
+    # 동
+    if cur == 4 and d == 1:
+        ans += cur_l + (n - l)
+    if cur == 4 and d == 2:
+        ans += (m - cur_l) + (n - l)
+
+print(ans)
