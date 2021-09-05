@@ -1,15 +1,11 @@
 from sys import stdin
-from collections import deque
-
 
 n, w = map(int, input().split())
-lst = [list(map(int, stdin.readline().split())) for _ in range(n - 1)]
-
-cnt = 0
 visited = [0] * (n + 1)
 
 # 최하단 노드 탐색
-for a, b in lst:
+for _ in range(n - 1):
+    a, b = map(int, stdin.readline().split())
     if visited[a]:
         if visited[a] == 1:
             n -= 1
