@@ -16,7 +16,7 @@ def count_subnode(n: int):
     for node in tr[n]:
         if not size[node]:
             count_subnode(node)
-        size[n] += size[node]
+            size[n] += size[node]
 
 
 n, r, q = map(int, input().split())
