@@ -1,4 +1,3 @@
-test = int(input())
 
 
 def dfs(n, cost):
@@ -14,6 +13,8 @@ def dfs(n, cost):
     else:
         dfs(n+1, cost)
 
+
+test = int(input())
 
 for test_case in range(1, test+1):
     d, m1, m3, y = map(int, input().split())
