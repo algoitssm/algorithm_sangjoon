@@ -1,5 +1,4 @@
 from itertools import combinations
-from copy import deepcopy
 
 
 def build_film(n):
@@ -30,6 +29,7 @@ def test_film():
                 m = max(m, t)
                 t = 1
         m = max(m, t)
+
         if m < K:
             return
 

@@ -26,7 +26,7 @@ for test_case in range(1, test+1):
             for k in range(N):
                 for l in range(N-M+1):
                     # 동선이 겹치는 경우
-                    if k == i and (j <= l < j+M or j <= l+M-1 < j+M):
+                    if k == i and (j <= l < j+M <= j or j <= l+M-1 < j+M):
                         continue
                     t = mp[k][l:l+M]
 
