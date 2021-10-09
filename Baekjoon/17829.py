@@ -1,5 +1,6 @@
 def cnn(x1, x2, y1, y2):
     tmp = []
+
     if x2-x1 == 2:
         for i in range(x1, x2):
             tmp.extend(mp[i][y1:y2])
