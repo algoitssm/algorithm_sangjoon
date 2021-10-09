@@ -1,5 +1,3 @@
-
-
 def permutation(l):
 
     if len(l) == c:
