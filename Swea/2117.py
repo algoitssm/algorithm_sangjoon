@@ -40,7 +40,7 @@ for tc in range(1, test+1):
             if line[j]:
                 h.append((i, j))
 
-    for k in range(3*n+1, 0, -1):  # 방범 최대 크기기준 순회
+    for k in range(n+2, 0, -1):  # 방범 최대 크기기준 순회
         if check_net(k):
             break
 
