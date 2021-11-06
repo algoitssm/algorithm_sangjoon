@@ -46,7 +46,7 @@ for test in range(1, test_case + 1):
                             time_line[t + size + 1], (size*(-1), nr, nc))
 
         t += 1
-
+    print(time_line)
     ans.append("#{} {}".format(test, res[0]))
 
 print(*ans, sep="\n")
