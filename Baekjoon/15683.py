@@ -15,6 +15,7 @@ def check_room(r, c, p):
                 v.add((tr, tc))
     return v, cnt
 
+
 # 모든 카메라에 대해 순회하며 dfs 탐색
 
 
@@ -34,7 +35,7 @@ def dfs(idx):
     for p in cd[c_no]:  # 카메라 탐색 방향에 대해 순회
         tmp_v, tmp_cnt = check_room(r, c, p)  # 카메라 탐색지점 및 개수 반환
         visited = visited | tmp_v
-        dfs(idx+1)  # 다음카메라 탐색
+        dfs(idx + 1)  # 다음카메라 탐색
         visited = visited - tmp_v
 
 
@@ -52,8 +53,8 @@ cd = {
 
 mp = []
 camera = []
-total = n*m  # 전체 삭각지대 개수
-ans = [n*m]  # 정답 초기화
+total = n * m  # 전체 삭각지대 개수
+ans = [n * m]  # 정답 초기화
 
 for i in range(n):
     line = list(map(int, input().split()))

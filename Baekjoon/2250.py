@@ -5,7 +5,7 @@ input = sys.stdin.readline
 
 n = int(input())
 # 트리 생성
-tree = [[0] for _ in range(n+1)]
+tree = [[0] for _ in range(n + 1)]
 for _ in range(n):
     a, l, r = map(int, input().split())
     tree[a].extend([l, r])
@@ -14,7 +14,7 @@ for _ in range(n):
     if r != -1:
         tree[r][0] = a
 
-for i in range(1, n+1):
+for i in range(1, n + 1):
     if tree[i][0] == 0:
         root = i
 
@@ -29,22 +29,21 @@ def in_order_traverse(node: int, level: int):
 
     # 왼쪽
     if tree[node][1] != -1:
-        in_order_traverse(tree[node][1], level+1)
+        in_order_traverse(tree[node][1], level + 1)
 
     # 노드의 레벨 기준 위치 지정
     cnt += 1
     if not level in level_dic:
-        level_dic[level] = [cnt, - (n + 1)]
+        level_dic[level] = [cnt, -(n + 1)]
     else:
         level_dic[level][1] = cnt
     # 오른쪽
     if tree[node][2] != -1:
-        in_order_traverse(tree[node][2], level+1)
+        in_order_traverse(tree[node][2], level + 1)
 
 
 in_order_traverse(root, 1)
-sort_lst = sorted(level_dic.items(),
-                  key=lambda x: (-(x[1][1]-x[1][0]), x[0]))
+sort_lst = sorted(level_dic.items(), key=lambda x: (-(x[1][1] - x[1][0]), x[0]))
 ans = [sort_lst[0][0], sort_lst[0][1][1] - sort_lst[0][1][0] + 1]
 
 if ans[1] <= 0:

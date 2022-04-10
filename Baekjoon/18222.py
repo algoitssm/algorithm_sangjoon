@@ -10,4 +10,4 @@ def thue_morse(k):
 
 
 k = int(input())
-print(thue_morse(k-1))
+print(thue_morse(k - 1))

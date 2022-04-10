@@ -1,5 +1,3 @@
-
-
 def dfs(idx, cal):
     global max_v
     global min_v
@@ -21,13 +19,13 @@ def dfs(idx, cal):
                 temp *= nums[idx]
             if i == 3:
                 temp /= nums[idx]
-            dfs(idx+1, int(temp))
+            dfs(idx + 1, int(temp))
             op[i] += 1
 
 
 test_case = int(input())
 
-for test in range(1, test_case+1):
+for test in range(1, test_case + 1):
     n = int(input())
     op = list(map(int, input().split()))
     nums = list(map(int, input().split()))

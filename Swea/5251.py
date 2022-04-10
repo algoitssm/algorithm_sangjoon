@@ -1,10 +1,8 @@
 # 문제 푼 시간
+import heapq
 import pathlib
 import sys
-
 from collections import defaultdict
-import heapq
-
 
 sys.stdin = open(str(pathlib.Path(__file__).parent.absolute()) + "/input.txt")
 
@@ -41,7 +39,7 @@ for test in range(1, test_case + 1):
         s, e, w = map(int, input().split())
         tree[s].add((e, w))
 
-    distance = [float("inf")]*(N+1)
+    distance = [float("inf")] * (N + 1)
     res = dijkstra()
 
     ans.append("#{} {}".format(test, res))

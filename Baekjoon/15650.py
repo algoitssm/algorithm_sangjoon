@@ -4,8 +4,8 @@ def combination(idx, l):
         print(" ".join(l))
         return
 
-    for i in range(idx, n+1):
-        combination(idx+1, l+[str(i)])
+    for i in range(idx, n + 1):
+        combination(idx + 1, l + [str(i)])
 
 
 n, c = map(int, input().split())

@@ -2,11 +2,11 @@ n = int(input())
 m = int(input())
 INF = int(1e10)
 
-mp = [[INF]*n for _ in range(n)]
+mp = [[INF] * n for _ in range(n)]
 
 for _ in range(m):
     a, b, d = map(int, input().split())
-    mp[a-1][b-1] = min(mp[a-1][b-1], d)
+    mp[a - 1][b - 1] = min(mp[a - 1][b - 1], d)
 
 for k in range(n):
     for i in range(n):

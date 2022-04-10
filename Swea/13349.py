@@ -31,7 +31,6 @@ for test in range(1, test_case + 1):
                     continue
                 mp[i][j] = min(mp[i][j], mp[i][k] + mp[k][j])
 
-    ans.append("#{} {}".format(
-        test, mp[0][1]-1 if mp[0][1]-1 != inf else -1))
+    ans.append("#{} {}".format(test, mp[0][1] - 1 if mp[0][1] - 1 != inf else -1))
 
 print(*ans, sep="\n")

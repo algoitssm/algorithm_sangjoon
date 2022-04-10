@@ -1,6 +1,7 @@
-from itertools import combinations
 from collections import deque
 from copy import deepcopy
+from itertools import combinations
+
 # 0: 빈칸 1: 벽 2: 바이러스
 
 

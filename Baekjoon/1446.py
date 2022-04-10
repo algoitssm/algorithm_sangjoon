@@ -17,8 +17,8 @@ def djikstra():
 
 
 n, d = map(int, input().split())
-res = [d]*(d+1)
-tr = {i: [(i+1, 1)] for i in range(d)}
+res = [d] * (d + 1)
+tr = {i: [(i + 1, 1)] for i in range(d)}
 
 for _ in range(n):
     s, e, l = map(int, input().split())

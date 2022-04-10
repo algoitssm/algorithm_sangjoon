@@ -20,7 +20,7 @@ def dfs(x, y, d):
 
 test = int(input())
 
-for test_case in range(1, test+1):
+for test_case in range(1, test + 1):
     N = int(input())
     mp = [list(map(int, input().split())) for _ in range(N)]
     # 시계방향 회전
@@ -28,11 +28,11 @@ for test_case in range(1, test+1):
     dy = [1, -1, -1, 1]
     ans = -1
 
-    for i in range(N-2):
-        for j in range(1, N-1):
-            if mp[i][j] != mp[i+1][j+1]:
+    for i in range(N - 2):
+        for j in range(1, N - 1):
+            if mp[i][j] != mp[i + 1][j + 1]:
                 start = (i, j)
-                dessert = [mp[i][j], mp[i+1][j+1]]
-                dfs(i+1, j+1, 0)
+                dessert = [mp[i][j], mp[i + 1][j + 1]]
+                dfs(i + 1, j + 1, 0)
 
     print(f"#{test_case} {ans}")

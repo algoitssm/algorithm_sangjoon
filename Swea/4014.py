@@ -2,7 +2,7 @@ test = int(input())
 
 
 def check_airstrip(lst: list):
-    check = [1]*N
+    check = [1] * N
     for i in range(N):
         stack = [lst[i][0]]
         up = None
@@ -32,7 +32,7 @@ def check_airstrip(lst: list):
     return sum(check)
 
 
-for test_case in range(1, test+1):
+for test_case in range(1, test + 1):
     N, X = map(int, input().split())
     mp = [list(map(int, input().split())) for _ in range(N)]
     ans = 0

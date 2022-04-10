@@ -12,7 +12,7 @@ for k in range(n):
 
 for _ in range(m):
     a, b, c = map(int, input().split())
-    if mp[a-1][b-1] <= c:
+    if mp[a - 1][b - 1] <= c:
         print("Enjoy other party")
     else:
         print("Stay here")

@@ -1,5 +1,3 @@
-
-
 # def get_giga(r: int):
 
 #     visited[r] = True
@@ -43,9 +41,9 @@ sys.setrecursionlimit(10**6)
 input = sys.stdin.readline
 
 n, r = map(int, input().split())
-tree = [[] for _ in range(n+1)]
+tree = [[] for _ in range(n + 1)]
 
-for _ in range(n-1):
+for _ in range(n - 1):
     a, b, d = map(int, input().split())
     tree[a].append((b, d))
     tree[b].append((a, d))
@@ -69,7 +67,7 @@ def dfs(cur, par, length, check):
     # 가지노드 dfs 탐색
     for node, line in tree[cur]:
         if not node == par:
-            dfs(node, cur, length+line, check)
+            dfs(node, cur, length + line, check)
 
 
 dfs(r, r, 0, 0)

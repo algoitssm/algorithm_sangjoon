@@ -6,7 +6,7 @@ def check(x1, x2, y1, y2):
 
     if temp == 0:
         return 0
-    elif temp == (x2-x1)**2:
+    elif temp == (x2 - x1) ** 2:
         return 1
     else:
         return 2
@@ -20,9 +20,9 @@ def divide(x1, x2, y1, y2):
     elif chk == 1:
         print("1", end="")
     else:
-        mx = (x2 - x1)//2 + x1
-        my = (y2 - y1)//2 + y1
-        print("(",  end="")
+        mx = (x2 - x1) // 2 + x1
+        my = (y2 - y1) // 2 + y1
+        print("(", end="")
         divide(x1, mx, y1, my)
         divide(x1, mx, my, y2)
         divide(mx, x2, y1, my)

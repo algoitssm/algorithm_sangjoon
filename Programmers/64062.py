@@ -3,7 +3,7 @@ def solution(stones, k):
 
     while s <= e:
         tmp = 0
-        m = (s+e)//2
+        m = (s + e) // 2
 
         for s in stones:
             if s - m <= 0:

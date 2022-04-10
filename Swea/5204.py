@@ -32,7 +32,7 @@ for test in range(1, test_case + 1):
     n = int(input())
     lst = list(map(int, input().split()))
     res = [0, 0]
-    res[0] = divide(lst)[n//2]
+    res[0] = divide(lst)[n // 2]
     ans.append("#{} {} {}".format(test, res[0], res[1]))
 
 print(*ans, sep="\n")

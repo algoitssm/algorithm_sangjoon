@@ -10,7 +10,7 @@ test_case = int(input())
 for _ in range(test_case):
     k = int(input())
     max_q, min_q = [], []
-    lst = [0]*1000001
+    lst = [0] * 1000001
 
     for i in range(k):
         d, n = input().split()

@@ -20,21 +20,21 @@ class Magnet:
 
 def find_magnet_left(n):
     if n > 0:
-        if m[n].magnet[6] != m[n-1].magnet[2]:
-            rotate_magnet.append(n-1)
-            find_magnet_left(n-1)
+        if m[n].magnet[6] != m[n - 1].magnet[2]:
+            rotate_magnet.append(n - 1)
+            find_magnet_left(n - 1)
 
 
 def find_magnet_right(n):
     if n < 3:
-        if m[n].magnet[2] != m[n+1].magnet[6]:
-            rotate_magnet.append(n+1)
-            find_magnet_right(n+1)
+        if m[n].magnet[2] != m[n + 1].magnet[6]:
+            rotate_magnet.append(n + 1)
+            find_magnet_right(n + 1)
 
 
 test_case = int(input())
 
-for test in range(1, test_case+1):
+for test in range(1, test_case + 1):
     k = int(input())
     m = [Magnet(list(map(int, input().split())), i) for i in range(1, 5)]
     ans = 0
@@ -48,8 +48,8 @@ for test in range(1, test_case+1):
         find_magnet_right(n)  # 좌측 자석 탐색
 
         for magnet in rotate_magnet:  # 회전가능 자석에 대해 회전 수행
-            if (n-magnet) % 2:
-                m[magnet].rotate(d*(-1))
+            if (n - magnet) % 2:
+                m[magnet].rotate(d * (-1))
             else:
                 m[magnet].rotate(d)
 

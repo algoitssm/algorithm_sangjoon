@@ -11,8 +11,8 @@ visited = [0] * n
 
 for _ in range(m):
     u, v = map(int, input().split())
-    mp[u-1].append(v-1)
-    mp[v-1].append(u-1)
+    mp[u - 1].append(v - 1)
+    mp[v - 1].append(u - 1)
 
 res = 0
 for s in range(n):

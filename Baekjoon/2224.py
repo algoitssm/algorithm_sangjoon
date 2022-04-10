@@ -1,5 +1,5 @@
 # 플루이드 와샬
-gp = [[0]*58 for _ in range(58)]
+gp = [[0] * 58 for _ in range(58)]
 n = int(input())
 cnt = 0
 
@@ -9,8 +9,8 @@ for _ in range(n):
     if a == b:
         continue
 
-    if not gp[ord(a)-65][ord(b)-65]:
-        gp[ord(a)-65][ord(b)-65] = 1
+    if not gp[ord(a) - 65][ord(b) - 65]:
+        gp[ord(a) - 65][ord(b) - 65] = 1
         cnt += 1
 
 for k in range(58):

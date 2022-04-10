@@ -2,7 +2,7 @@ from collections import deque
 
 test = int(input())
 
-for test_case in range(1, test+1):
+for test_case in range(1, test + 1):
     n, m = map(int, input().split())
     gh = [list(input()) for _ in range(n)]
     visited = [[-1] * m for _ in range(n)]

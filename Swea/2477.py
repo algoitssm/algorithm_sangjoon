@@ -9,7 +9,7 @@ for test in range(1, test_case + 1):
     b = [0] + list(map(int, input().split()))
     tk = deque(map(int, input().split()))
 
-    d = [[[0, 0]]*(n+1), [[0, 0, 0]]*(m+1)]
+    d = [[[0, 0]] * (n + 1), [[0, 0, 0]] * (m + 1)]
     q = [deque([]), deque([])]
     cnt = 0
     num = 0
@@ -25,7 +25,7 @@ for test in range(1, test_case + 1):
 
         # 접수창구 배치
         tmp = []
-        for i in range(1, n+1):
+        for i in range(1, n + 1):
             if d[0][i][1]:  # 창구에 사람이 있으면
                 d[0][i][1] -= 1
 
@@ -44,7 +44,7 @@ for test in range(1, test_case + 1):
             q[1].append((p, idx))
 
         # 정비 배치
-        for i in range(1, m+1):
+        for i in range(1, m + 1):
             p, idx, c = d[1][i]
             if d[1][i][2]:
                 d[1][i][2] -= 1

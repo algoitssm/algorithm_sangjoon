@@ -1,13 +1,14 @@
 # 1. 문제 솔루션 코드를 작성합니다.
 
+
 def get_cost(k):  # 비용 계산 함수
-    return k**2 + (k-1)**2
+    return k**2 + (k - 1) ** 2
 
 
 def count_house(r1, c1, k):  # 마름모 내 집 개수 확인
     cnt = 0
     for r2, c2 in h:
-        if abs(r1-r2)+abs(c1-c2) <= k-1:
+        if abs(r1 - r2) + abs(c1 - c2) <= k - 1:
             cnt += 1
     return cnt
 
@@ -28,7 +29,7 @@ def check_net(k):  # 이익 확인 및 최대 집 개수 확인: k가 클수록 
 
 ans = []
 test = int(input())
-for tc in range(1, test+1):
+for tc in range(1, test + 1):
     n, m = map(int, input().split())
     res = [0, 0, 0]
 
@@ -40,7 +41,7 @@ for tc in range(1, test+1):
             if line[j]:
                 h.append((i, j))
 
-    for k in range(n+2, 0, -1):  # 방범 최대 크기기준 순회
+    for k in range(n + 2, 0, -1):  # 방범 최대 크기기준 순회
         if check_net(k):
             break
 

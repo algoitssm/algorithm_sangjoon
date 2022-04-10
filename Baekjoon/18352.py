@@ -1,5 +1,5 @@
-from collections import defaultdict
 import heapq
+from collections import defaultdict
 
 
 def dijkstra(s):
@@ -17,12 +17,12 @@ def dijkstra(s):
                 chk[0] = True
 
             distance[e] = d + 1
-            heapq.heappush(heap, (d+1, e))
+            heapq.heappush(heap, (d + 1, e))
 
 
 n, m, k, x = map(int, input().split())
 graph = defaultdict(list)
-distance = [float("inf")] * (n+1)
+distance = [float("inf")] * (n + 1)
 chk = [False]
 
 for _ in range(m):

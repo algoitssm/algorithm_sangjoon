@@ -1,6 +1,6 @@
 from collections import deque
-from itertools import product
 from copy import deepcopy
+from itertools import product
 
 # 위로 쌓은 블록에 대한 객체 생성
 
@@ -31,8 +31,8 @@ def dfs(x, idx):
 
     for i in range(1, e):  # 이동가능 벽돌의 개수
         for j in range(4):  # 4개의 방향에 대한
-            nx = x + dx[j]*i
-            nidx = idx + didx[j]*i
+            nx = x + dx[j] * i
+            nidx = idx + didx[j] * i
             if 0 <= nx < W and 0 <= nidx < blocks[nx].get_block_len():
                 if (nx, nidx) not in breaks:
                     breaks.append((nx, nidx))
@@ -41,7 +41,7 @@ def dfs(x, idx):
 
 test = int(input())
 
-for test_case in range(1, test+1):
+for test_case in range(1, test + 1):
     N, W, H = map(int, input().split())
     B = [Block() for _ in range(W)]
     total = 0

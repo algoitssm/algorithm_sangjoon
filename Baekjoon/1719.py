@@ -1,12 +1,12 @@
 n, m = map(int, input().split())
 
-mp = [[float("inf")]*n for _ in range(n)]  # 최단경로
-res = [["-"]*n for _ in range(n)]  # 방문 경로
+mp = [[float("inf")] * n for _ in range(n)]  # 최단경로
+res = [["-"] * n for _ in range(n)]  # 방문 경로
 
 for _ in range(m):  # 초기화
     a, b, d = map(int, input().split())
-    mp[a-1][b-1], mp[b-1][a-1] = d, d
-    res[a-1][b-1], res[b-1][a-1] = b, a
+    mp[a - 1][b - 1], mp[b - 1][a - 1] = d, d
+    res[a - 1][b - 1], res[b - 1][a - 1] = b, a
 
 # 플로이드-와샬 알고리즘
 for k in range(n):

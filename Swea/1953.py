@@ -16,17 +16,17 @@ def bfs(x, y):
             if 0 <= nx < n and 0 <= ny < m and not visited[nx][ny]:  # 이동가능 확인
                 if gh[nx][ny]:  # 터널확인
                     for s in turnel[gh[nx][ny]]:
-                        if abs(i-s) == 2 and cnt < l:
+                        if abs(i - s) == 2 and cnt < l:
                             visited[nx][ny] = 1
                             dq.append((nx, ny, cnt + 1))
 
 
 test = int(input())
 
-for test_case in range(1, test+1):
+for test_case in range(1, test + 1):
     n, m, r, c, l = map(int, input().split())
     gh = [list(map(int, input().split())) for _ in range(n)]
-    visited = [[0]*m for _ in range(n)]
+    visited = [[0] * m for _ in range(n)]
     # 상:0 좌:1 하:2 우:3
     dx = [-1, 0, 1, 0]
     dy = [0, -1, 0, 1]

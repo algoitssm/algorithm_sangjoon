@@ -5,7 +5,7 @@ def cal_time(t1: str, t2: str):
     h1, m1 = t1.split(":")
     h2, m2 = t2.split(":")
 
-    return (int(h2)-int(h1)) * 60 + (int(m2)-int(m1))
+    return (int(h2) - int(h1)) * 60 + (int(m2) - int(m1))
 
 
 def solution(fees, records):
@@ -37,7 +37,7 @@ def solution(fees, records):
 
         if v > 0:
             d, m = divmod(v, fees[2])
-            fee += (d+1)*fees[3] if m else d*fees[3]
+            fee += (d + 1) * fees[3] if m else d * fees[3]
 
         answer.append(fee)
 

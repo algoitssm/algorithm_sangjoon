@@ -12,15 +12,15 @@ def dfs(x, y, cnt, check):
         if 0 <= nx < N and 0 <= ny < N and not visited[nx][ny]:
 
             if graph[nx][ny] < graph[x][y]:
-                dfs(nx, ny, cnt+1, check)
+                dfs(nx, ny, cnt + 1, check)
                 continue
 
             # 지형을 깍지 않았을 경우
             if not check:
-                for k in range(1, K+1):
-                    if graph[nx][ny]-k < graph[x][y]:
+                for k in range(1, K + 1):
+                    if graph[nx][ny] - k < graph[x][y]:
                         graph[nx][ny] -= k
-                        dfs(nx, ny, cnt+1, True)
+                        dfs(nx, ny, cnt + 1, True)
                         graph[nx][ny] += k
                         break
 
@@ -30,7 +30,7 @@ def dfs(x, y, cnt, check):
 
 test = int(input())
 
-for test_case in range(1, test+1):
+for test_case in range(1, test + 1):
     N, K = map(int, input().split())
     graph = [list(map(int, input().split())) for _ in range(N)]
     ans = 0
@@ -46,7 +46,7 @@ for test_case in range(1, test+1):
 
     # 최대 높이 기준 dfs 탐색
     for x, y in mh_lst:
-        visited = [[0]*N for _ in range(N)]
+        visited = [[0] * N for _ in range(N)]
         dfs(x, y, 1, False)
 
     print(f"#{test_case} {ans}")
